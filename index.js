@@ -7,19 +7,20 @@
 
 // NB. Whatever the response for each of this endpoints, is up to you to decide.
 
-import createServer from 'http'
+import { createServer } from 'http'
 import authenticateUser from './helpers/authenticate.js'
 import books from './endpoint.function/books.js'
 import authors from './endpoint.function/authors.js'
 
 const port = 3000
 const server = createServer((req, res) => {
-  if (authenticateUser(req, res)) {
+  const { responseObject, success } = authenticateUser(req, res)
+  if (success) {
     if (req.url === '/books') {
-      books(req, res)
+      books(req, res, responseObject)
     }
     if (req.url === '/authors') {
-      authors(req, res)
+      authors(req, res, responseObject)
     }
   }
 })
