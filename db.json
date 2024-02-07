@@ -1,0 +1,12 @@
+[
+    { "username": "Talut", "password": "123456" },
+    { "username": "Obama", "password": "SaddamHussein234" },
+    { "username": "JohnDoe", "password": "qwerty" },
+    { "username": "JaneSmith", "password": "password123" },
+    { "username": "Alice", "password": "alice123" },
+    { "username": "Bob", "password": "bob456" },
+    { "username": "Charlie", "password": "charlie789" },
+    { "username": "David", "password": "david987" },
+    { "username": "Eve", "password": "eve654" },
+    { "username": "Frank", "password": "frank321" }
+]
