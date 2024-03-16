@@ -1,4 +1,4 @@
-import findUser from './db.function.js'
+import findUser from '../helpers/db.function.js'
 
 function authenticateUser (req, res) {
   const { headers } = req

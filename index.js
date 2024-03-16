@@ -18,13 +18,17 @@ const port = 3000
 
 // initialize server
 const server = createServer((req, res) => {
-  const { responseObjectbject, success } = authenticateUser(req, res)
+  const { responseObject , success } = authenticateUser(req, res)
   if (success) {
     if (req.url === '/books') {
       books(req, res, responseObject)
     }
     if (req.url === '/authors') {
       authors(req, res, responseObject)
+    }
+    else {
+      console.log(responseObject)
+      res.end(JSON.stringify(responseObject))
     }
   }
 })
