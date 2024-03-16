@@ -23,7 +23,7 @@ const server = createServer((req, res) => {
     if (req.url === '/books') {
       books(req, res, responseObject)
     }
-    if (req.url === '/authors') {
+    if (req.url === 'books/author') {
       authors(req, res, responseObject)
     }
     else {
