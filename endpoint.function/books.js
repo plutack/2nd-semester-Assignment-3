@@ -1,4 +1,8 @@
+// import neccessary modules
 import dummyResponse from '../helpers/response.function.js'
+
+
+// handle all methods to /books route
 function books (req, res, responseObject) {
   if (req.method === 'GET') {
     dummyResponse(req, res, responseObject)

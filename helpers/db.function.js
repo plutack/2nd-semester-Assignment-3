@@ -1,5 +1,7 @@
+// import neccessary modules
 import { readFileSync } from 'fs'
 
+// function to check if user exist in database
 function findUser (username, password) {
   const rawText = readFileSync('./db.json', 'utf8')
   const users = JSON.parse(rawText)
