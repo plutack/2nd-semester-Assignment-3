@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "esw -w --clear **/*.js"
+    "watch": "esw -w --clear **/*.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

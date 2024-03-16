@@ -25,4 +25,4 @@ const server = createServer((req, res) => {
   }
 })
 
-server.listen(port, () => console.log(`Server running at port ${port}`))
+server.listen(port, () => console.log(`Server running at port ${port}\nclick to open http://localhost:${port}`))
