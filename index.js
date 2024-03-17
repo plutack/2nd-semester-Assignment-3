@@ -8,30 +8,33 @@
 // NB. Whatever the response for each of this endpoints, is up to you to decide.
 
 // import neccessary modules
-import { createServer } from 'http'
-import authenticateUser from './middleware/authenticate.js'
-import books from './endpoint.function/books.js'
-import authors from './endpoint.function/authors.js'
+import { createServer } from "http";
+import authenticateUser from "./middleware/authenticate.js";
+import books from "./endpoint.function/books.js";
+import authors from "./endpoint.function/authors.js";
 
 //declare variables
-const port = 3000
+const port = 3000;
 
 // initialize server
 const server = createServer((req, res) => {
-  const { responseObject , success } = authenticateUser(req, res)
+  const { responseObject, success } = authenticateUser(req, res);
   if (success) {
-    if (req.url === '/books') {
-      books(req, res, responseObject)
+    if (req.url === "/books/author") {
+      authors(req, res, responseObject);
     }
-    if (req.url === 'books/author') {
-      authors(req, res, responseObject)
+    if (req.url === "/books") {
+      books(req, res, responseObject);
     }
-    else {
-      console.log(responseObject)
-      res.end(JSON.stringify(responseObject))
-    }
+  } else {
+    console.log(responseObject);
+    res.end(JSON.stringify(responseObject));
   }
-})
+});
 
 // start server
-server.listen(port, () => console.log(`Server running at port ${port}\nclick to open http://localhost:${port}`))
+server.listen(port, () =>
+  console.log(
+    `Server running at port ${port}\nclick to open http://localhost:${port}`,
+  ),
+);
