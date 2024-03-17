@@ -20,7 +20,7 @@ const port = 3000;
 const server = createServer((req, res) => {
   const { responseObject, success } = authenticateUser(req, res);
   if (success) {
-    if (req.url === "/books/author") {
+    if (req.url === "/books/author/") {
       authors(req, res, responseObject);
     }
     if (req.url === "/books") {
