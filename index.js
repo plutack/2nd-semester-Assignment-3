@@ -14,6 +14,7 @@ import books from "./endpoint.function/books.js";
 import authors from "./endpoint.function/authors.js";
 
 //declare variables
+const hostname = "127.0.0.1";
 const port = 3000;
 
 // initialize server
@@ -33,7 +34,7 @@ const server = createServer((req, res) => {
 });
 
 // start server
-server.listen(port, () =>
+server.listen(port, hostname, () =>
   console.log(
     `Server running at port ${port}\nclick to open http://localhost:${port}`,
   ),
